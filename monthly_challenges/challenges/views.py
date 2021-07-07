@@ -34,16 +34,16 @@ def index(request,month):
         '''3rd argument sent for dynamic rendering of HTML template'''
         return render(request,"challenges/challenge.html",{
             "text":res,
-            "month":month.capitalize()
+            "month":month
             })
     else:
         return HttpResponseNotFound("Not in the list")
     
 
 def month_list(request):
-    res_str=""
-    for i in list(monthly_tasks.keys()):
-        month_url=reverse("monthly-challenges",args=[i])
-        res_str+=f"<li><a href='{month_url}'>{i}</a></li>"
-    res_data=f"<h1><ol>{res_str}</ol></h1>"
-    return HttpResponse(res_data)
+    months= monthly_tasks.keys()
+    return render(request,"challenges/index.html",
+                    {
+                        "months":months,
+                    }
+                )

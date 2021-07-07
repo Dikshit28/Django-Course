@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{ month }} Challenge</title>
-    </head>
-
-    <body>
-        <h1>Challenges of {{ month }} month</h1>
-        <h3>{{ text }}</h3>
-    </body>
-
-</html>
+{% block title %}
+    {{ month|title }}
+{% endblock title %}
+{% block content %}
+    <h1>Challenge of {{ month|title }} month</h1>
+    <h3>{{ text }}</h3>
+{% endblock content %}
