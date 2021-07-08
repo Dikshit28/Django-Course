@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    {{ month|title }}
+    {{ month|title }} Challenge
 {% endblock title %}
 {% block content %}
+    {% include 'challenges/includes/header.html' %}
     <h1>Challenge of {{ month|title }} month</h1>
     <h3>{{ text }}</h3>
 {% endblock content %}

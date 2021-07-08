@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse,HttpResponseNotFound, response,HttpResponseRedirect
+from django.http import HttpResponse,HttpResponseNotFound, response,HttpResponseRedirect,Http404
 from django.urls import reverse
-#from django.template.loader import render_to_string
+from django.template.loader import render_to_string
 # Create your views here.
 
 monthly_tasks={
@@ -28,7 +28,7 @@ def intindex(request,month):
 
 def index(request,month):
     res=None
-    if month in monthly_tasks.keys():
+    try:
         res=monthly_tasks[month]
         #res=render_to_string("challenges/challenge.html")
         '''3rd argument sent for dynamic rendering of HTML template'''
@@ -36,8 +36,8 @@ def index(request,month):
             "text":res,
             "month":month
             })
-    else:
-        return HttpResponseNotFound("Not in the list")
+    except:
+        raise Http404()
     
 
 def month_list(request):
