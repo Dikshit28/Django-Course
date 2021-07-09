@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    {% block css %}{% endblock css %}
+    <link rel="stylesheet" href="{% static 'login/landing.css' %}">
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+    <div class="container-fluid box">
+        <div class="row h-100">
+            <div class="col-md-4 left">
+                <div class="title pt-5 pb-2 text-center">Get Started!!!</div>
+                <img src="{% static 'login/images/To-do-list-bg.png' %}" class='ilus img-fluid' alt="task-img">
+            </div>
+            <div class="col-md-8 right">
+                <div class="title pt-5 pb-2 text-center form-head">Login to productivity</div>
+                {% block content %}{% endblock content %}
+            </div>
+        </div>
+</div>
+    </div>
+    {% block js %}{% endblock js %}
+</body>
+</html>

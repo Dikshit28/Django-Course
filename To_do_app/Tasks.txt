@@ -1,0 +1,17 @@
+base html made
+pending sign in and sign up
+leave that backend for now
+move to Dashboard
+Features-
+    all tasks
+    detailed task
+    add task
+    delete task
+    modify task
+    color-coding tasks
+    alarm
+    voice notes
+    whatsapp automation
+    dark/light theme
+    settings
+    help
